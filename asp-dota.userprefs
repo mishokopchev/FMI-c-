@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Models/Effect.cs">
+    <Files>
+      <File FileName="asp-dota/XmlDto/AtributeHero.cs" Line="10" Column="20" />
+      <File FileName="asp-dota/XmlDto/Misho.cs" Line="2" Column="25" />
+      <File FileName="asp-dota/Models/AtributeHero.cs" Line="10" Column="20" />
+      <File FileName="asp-dota/Models/Effect.cs" Line="5" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.asp-dota PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Data/DbInitalizer.cs" relfile="asp-dota/Data/DbInitalizer.cs" line="23" column="1" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Serializer/Reader.cs" relfile="asp-dota/Serializer/Reader.cs" line="93" column="1" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Serializer/Reader.cs" relfile="asp-dota/Serializer/Reader.cs" line="86" column="1" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="133" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../students/students/Data/DbInitializer.cs" line="15" offsetX="329" offsetY="210" expression="e.StackTrace" liveUpdate="False" />
+    <Watch file="asp-dota/Program.cs" line="186" offsetX="834" offsetY="2775" expression="string" liveUpdate="False" />
+    <Watch file="asp-dota/Serializer/Reader.cs" line="114" offsetX="632" offsetY="1695" expression="e.Message" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+</Properties>

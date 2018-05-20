@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT dota (game, buildings, heroes, items) >
+<!ELEMENT game (name, genre, designer) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT genre (#PCDATA) >
+<!ELEMENT designer (#PCDATA) >
+<!ELEMENT buildings (building+) >
+<!ELEMENT building (region, type, life, defence, damage) >
+<!ATTLIST building 
+    side (sentinel|scorge) #REQUIRED
+    main CDATA #REQUIRED >
+<!ELEMENT region (#PCDATA) >
+<!ELEMENT type (#PCDATA) >
+<!ELEMENT life (#PCDATA) >
+<!ELEMENT defence (#PCDATA) >
+<!ELEMENT damage (#PCDATA) >
+<!ELEMENT heroes (hero+) >
+<!ELEMENT hero (title, atribute, status,movespeed, skills, armor, dps) >
+<!ATTLIST hero
+    id ID #REQUIRED
+    attack (range|melee) #REQUIRED
+    affiliation (sentinel|scorge) #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT atribute (#PCDATA) >
+<!ATTLIST atribute
+    short (AGI|INT|STR) #REQUIRED>
+<!ELEMENT status (#PCDATA) >
+<!ELEMENT movespeed (#PCDATA) >
+<!ELEMENT skills (skill+) >
+<!ELEMENT skill (num1, num2, num3, num4) >
+<!ELEMENT num1 (#PCDATA)>
+<!ELEMENT num2 (#PCDATA)>
+<!ELEMENT num3 (#PCDATA)>
+<!ELEMENT num4 (#PCDATA)>
+<!ELEMENT armor (#PCDATA) >
+<!ELEMENT dps (#PCDATA) >
+<!ELEMENT items (item+) >
+<!ELEMENT item (merchant, price, effects, need, description) >
+<!ATTLIST item 
+    id CDATA #REQUIRED
+    slot (1|2|3|4|5|6) #REQUIRED
+    hero CDATA #REQUIRED>
+<!ELEMENT merchant (#PCDATA) >
+<!ELEMENT price (#PCDATA) >
+<!ELEMENT effects (effect+) >
+<!ELEMENT effect (main, secondary) >
+<!ELEMENT main (#PCDATA) >
+<!ELEMENT secondary (#PCDATA) >
+<!ELEMENT need (#PCDATA) >
+<!ELEMENT description (#PCDATA) >

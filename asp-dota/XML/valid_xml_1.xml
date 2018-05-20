@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dota>
+    <game>
+        <name> Defense of the Ancients ( Дота )</name>
+        <genre> Multiplayer online battle arena ( или бойна арена с повече от един играча ) </genre>
+        <designer> "Ice Frog" </designer>
+    </game>
+    <buildings>
+        <building side="sentinel" main="Tree of Life">
+            <region> горен ръкав </region>
+            <type> кула </type>
+            <life> 1500 </life>
+            <defence> 5 </defence>
+            <damage> 40 </damage>
+        </building>
+        <building side="scorge" main="Acolyte">
+            <region> среда </region>
+            <type> казарма </type>
+            <life> 4000 </life>
+            <defence> 3 </defence>
+            <damage> няма </damage>
+        </building>
+    </buildings>
+
+    <heroes>
+        <hero id="Nevermore" attack="range" affiliation="scorge">
+            <title>Shadow Fiend </title>
+            <atribute short="AGI"> ловкост </atribute>
+            <status> невидимост </status>
+            <movespeed>Скорост на движение: 305 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Shadowraze </num1>
+                    <num2> Necromastery </num2>
+                    <num3> Presence of Dark </num3>
+                    <num4> Requiem of Souls </num4>
+                </skill>
+            </skills>
+            <armor>Броня: 1.8 </armor>
+            <dps>Щета: 35 - 41 </dps>
+        </hero>
+        <hero id="Zeus" attack="range" affiliation="sentinel">
+            <title>Lord of Olimpia </title>
+            <atribute short="INT"> интелигентност </atribute>
+            <status> няма </status>
+            <movespeed>Скорост на движение: 295 </movespeed>
+            <skills>
+                <skill>
+                    <num1>  Arc Lightnings   </num1>
+                    <num2>   Lightning Bolts   </num2>
+                    <num3>    Static Fields   </num3>
+                    <num4> Thundergod's Wrat</num4>
+                </skill>
+            </skills>
+            <armor>Броня: 1.54 </armor>
+            <dps>Щета: 41 - 49 </dps>
+        </hero>
+        <hero id="Warlock" attack="range" affiliation="scorge">
+            <title>Demnok Lannik </title>
+            <atribute short="INT"> интелигентност </atribute>
+            <status> няма  </status>
+            <movespeed>Скорост на движение: 295 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Fatal Bonds </num1>
+                    <num2> Shadow Word </num2>
+                    <num3> Upheavals 's Wrath</num3>
+                    <num4> Rain of Chaos </num4>
+                </skill>
+            </skills>
+            <armor>Броня: 2.4 </armor>
+            <dps>Щета: 46 - 56 </dps>
+        </hero>
+    </heroes>
+
+    <items>
+        <item id="Perseverance" slot="5" hero="Warlock">
+            <merchant> Gateway Relics </merchant>
+            <price> 1750 </price>
+            <effects>
+                <effect>
+                    <main> Възстановяване на 5 HP / сек </main>
+                    <secondary> 10 щета </secondary>
+                </effect>
+            </effects>
+            <need> Пръстен на живота (875), Камъка Войд (875)    </need>
+            <description> Скъпоценен камък, който дава сърцето на приносителя. </description>
+        </item>
+        
+        <item id="Kelen's Dagger" slot="3" hero="Zeus">
+            <merchant> Cache of Quel-thelan </merchant>
+            <price> 2150a </price>
+            <effects>
+                <effect>
+                    <main> Телепорт до разстояние 1200. </main>
+                    <secondary> Не може да се използва, ако има повреди в последните три секунда </secondary>
+                </effect>
+            </effects>
+            <need> няма </need>
+            <description> Митичната Камата използва от Келен най-бързият убиец ходил някога земите на Азерот. </description>
+        </item>
+    </items>
+
+</dota>

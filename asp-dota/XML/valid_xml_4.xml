@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dota SYSTEM "dota.dtd">
+<dota>
+    
+    <game>
+        <name> Defense of the Ancients ( Дота )</name>
+        <genre> Multiplayer online battle arena ( или бойна арена с повече от един играча ) </genre>
+        <designer> "Ice Frog" </designer>
+    </game>
+    
+    <buildings>
+        <building side="sentinel" main="Tree of Life">
+            <region> средата </region>
+            <type> кула </type>
+            <life> 1100 </life>
+            <defence> 2 </defence>
+            <damage> 10 </damage>
+        </building>
+        <building side="scorge" main="Acolyte">
+            <region> средата </region>
+            <type> кула  </type>
+            <life> 2200 </life>
+            <defence> 3 </defence>
+            <damage> 23 </damage>
+        </building>
+    </buildings>
+    
+    <heroes>
+        <hero id="Admiral" attack="melee" affiliation="sentinel">
+            <title> Daelin Proudmoore </title> 
+            <atribute short="STR"> сила </atribute>
+            <status> няма </status>
+            <movespeed> Скорост на движение: 300 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Torrent   </num1>
+                    <num2> Tidebringer   </num2>
+                    <num3> X Marks The Spot   </num3>
+                    <num4> Ghost Ship  </num4>
+                </skill>
+            </skills>
+            <armor> броня: 1.96 </armor>
+            <dps> щета: 50 - 60 </dps>
+        </hero>  
+        <hero id="Oblivion" attack="range" affiliation="scorge">
+            <title> Pugna </title> 
+            <atribute short="INT"> интелигентност </atribute>
+            <status> няма </status>
+            <movespeed> Скорост на движение: 320 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Nether Blast  </num1>
+                    <num2> Decrepify  </num2>
+                    <num3> Nether Ward  </num3>
+                    <num4> Life Drain </num4>
+                </skill>
+            </skills>
+            <armor> броня: 1.54 </armor>
+            <dps> щета: 41 - 49 </dps>
+        </hero>  
+        <hero id="Gorgon" attack="range" affiliation="scorge">
+            <title> Medusa </title> 
+            <atribute short="AGI"> ловкост  </atribute>
+            <status> няма </status>
+            <movespeed> Скорост на движение: 290 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Split Shot   </num1>
+                    <num2> Mystic Snake  </num2>
+                    <num3> Mana Shield   </num3>
+                    <num4> Stone Gaze   </num4>
+                </skill>
+            </skills>
+            <armor> броня: 1.8 </armor>
+            <dps> щета: 44 - 50 </dps>
+        </hero>  
+    </heroes>
+    
+    <items>
+        <item id="Quarterstaff" slot="5" hero="Admiral">
+            <merchant> Arcane Sanctum </merchant>
+            <price> 900 </price>
+            <effects> 
+                <effect>
+                    <main> 10 щета </main>
+                    <secondary> 10 скорост на атака</secondary>
+                </effect>
+            </effects>
+            <need> няма </need>
+            <description> Четири от тях образуват един обикновен персонал, уф! </description>
+        </item>
+        <item id="Crystalys" slot="2" hero="Admiral">
+            <merchant> Ancient Weaponary </merchant>
+            <price> 2150 </price>
+            <effects> 
+                <effect>
+                    <main> 30 щета </main>
+                    <secondary> Критичен удар (пасивно) </secondary>
+                </effect>
+            </effects>
+            <need> Меч (1200) , Остриета на атаката (450)  </need>
+            <description> Кръстен решителна битка във войната на влъхвите, в който бунтовниците са спасени от Рошан от затвора си в Crystalys. </description>
+        </item>
+        <item id="Eye of Skadi" slot="1" hero="Gorgon">
+            <merchant> Enchanted Artifacts </merchant>
+            <price> 5675 </price>
+            <effects> 
+                <effect>
+                    <main> 25 ловкост, 25 сила, 25 интелигентност </main>
+                    <secondary> Ледена атака (пасивно, орб) </secondary>
+                </effect>
+            </effects>
+            <need> 2 X последен орб (2100)  </need>
+            <description> Изключително рядък артефакт, охраняван от лазурните драконите на Northrend. </description>
+        </item>
+    </items>
+    
+</dota>
+
+

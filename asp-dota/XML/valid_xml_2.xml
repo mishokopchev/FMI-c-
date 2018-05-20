@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dota SYSTEM "dota.dtd">
+<dota>   
+    <game>
+        <name> Defense of the Ancients ( Дота )</name>
+        <genre> Multiplayer online battle arena ( или бойна арена с повече от един играча ) </genre>
+        <designer> "Ice Frog" </designer>
+    </game>   
+    <buildings>
+        <building side="sentinel" main="Tree of Life">
+            <region> средата </region>
+            <type> къщичка </type>
+            <life> 1000</life>
+            <defence> 2 </defence>
+            <damage> няма </damage>
+        </building>
+        <building side="scorge" main="Acolyte">
+            <region> средата </region>
+            <type> главна сграда </type>
+            <life> 10000 </life>
+            <defence> 3 </defence>
+            <damage> няма </damage>
+        </building>
+    </buildings>
+    
+    <heroes>
+        <hero id="Earthshaker" attack="melee" affiliation="sentinel">
+            <title> Raigor Stonehoof </title> 
+            <atribute short="STR"> сила </atribute>
+            <status> двойна щета </status>
+            <movespeed> Скорост на движение: 310 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Fissure  </num1>
+                    <num2> Enchant Totem  </num2>
+                    <num3> Aftershock  </num3>
+                    <num4> Echo Slams </num4>
+                </skill>
+            </skills>
+            <armor> Броня: 2.68 </armor>
+            <dps> Щета: 46 - 56 </dps>
+        </hero>  
+        <hero id="Oblivion" attack="range" affiliation="scorge">
+            <title> Pugna </title> 
+            <atribute short="INT"> интелигентност </atribute>
+            <status> няма </status>
+            <movespeed> Скорост на движение: 320 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Nether Blast  </num1>
+                    <num2> Decrepify  </num2>
+                    <num3> Nether Ward  </num3>
+                    <num4> Life Drain </num4>
+                </skill>
+            </skills>
+            <armor> Броня: 1.54 </armor>
+            <dps> Щета: 41 - 49 </dps>
+        </hero>  
+        <hero id="Zet" attack="range" affiliation="scorge">
+            <title> Arc Warden </title> 
+            <atribute short="AGI"> ловкост  </atribute>
+            <status> бързане </status>
+            <movespeed> Скорост на движение: 295 </movespeed>
+            <skills>
+                <skill>
+                    <num1> Flux  </num1>
+                    <num2> Magnetic Field </num2>
+                    <num3> Spark Wraith  </num3>
+                    <num4> Tempest двойна  </num4>
+                </skill>
+            </skills>
+            <armor> Броня: 0.1 </armor>
+            <dps> Щета: 40-50 </dps>
+        </hero>  
+    </heroes>
+    
+    <items>
+        <item id="Aghanim's Scepter" slot="2" hero="Earthshaker">
+            <merchant> Arcane Sanctum </merchant>
+            <price> 4200 </price>
+            <effects> 
+                <effect>
+                    <main> 10 всички атрибути, 200 живот, 150 мана </main>
+                    <secondary> Подобравяне на ултимата (пасивно) </secondary>
+                </effect>
+            </effects>
+            <need> Пойнт Бустер (1200), Брадва на Огре (1000), Острие на готовността (1000), Жезъл на магиосник (1000) </need>
+            <description> Жезъл на магьосник със сила на полубог. </description>
+        </item>
+        <item id="Empty Bottle" slot="1" hero="Zet">
+            <merchant> Ancient of Wonders </merchant>
+            <price> 650 </price>
+            <effects> 
+                <effect>
+                    <main> Регенерация (активно) </main>
+                    <secondary> Хващане на руни (активно) </secondary>
+                </effect>
+            </effects>
+            <need> няма </need>
+            <description> Вълшебна бутилка, която е оцеляла през вековете. Тя може да съхранява лековита вода и руни. </description>
+        </item>
+    </items>
+    
+</dota>
