@@ -23,6 +23,7 @@
     <Folder Include="XmlDto\" />
     <Folder Include="Adapter\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyEnumeration.cs" />
@@ -32,7 +33,7 @@
     <Compile Remove="Serializer\Settings.cs" />
     <Compile Remove="Serializer\Resolver.cs" />
     <Compile Remove="Models\AtributeHero.cs" />
-    <Compile Remove="Models\Dota.cs" />
     <Compile Remove="XmlDto\Misho.cs" />
+    <Compile Remove="Adapter\GameEntityAdapter.cs" />
   </ItemGroup>
 </Project>

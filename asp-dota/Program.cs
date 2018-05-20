@@ -49,10 +49,18 @@ namespace asp_dota
 
             //host.Run();
 
-            //checkXml();
+            checkXml();
             Reader<Dota> reader = new Reader<Dota>();
-            Dota dota = dota1();
-            reader.Serialize(dota,"/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
+
+            //  Dota dota = dota1();
+            //reader.Serialize(dota,"/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
+            //Dota deDota = reader.Deserialize("/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
+            //Console.WriteLine(deDota);
+
+            // tova se serializira pravilno no trqbva da se sazdata pravilno obektite i vrazkite my tqh 
+            // za da mine test parvo trqbva da da ima tag za dotata
+
+
 
 
         }
@@ -67,7 +75,7 @@ namespace asp_dota
         {
             Reader<Dota> reader = new Reader<Dota>();
             string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
-            reader.validateFiles(fs);
+            //reader.validateFiles(fs);
         }
 
 

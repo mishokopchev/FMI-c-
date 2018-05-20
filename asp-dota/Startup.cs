@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using aspdota.Adapter;
 using aspdota.Data;
+using aspdota.Repository;
+using aspdota.Serializer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,9 +26,11 @@ namespace asp_dota
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            //services.AddDbContext<DotaContext>(options =>
-                                               //options.UseMySQL(Startup.DB));
+            services.AddSingleton<IGameRepository, GameRepository>();
+            services.AddSingleton<IDotaRepository, DotaRepository>();
+            services.AddTransient<IReader<aspdota.XmlDto.Dota>, Reader<aspdota.XmlDto.Dota>>();
+            services.AddSingleton<Adapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota >> ();
+            // mvc config
             services.AddDbContext<DotaContext>();
             services.AddMvc();
         }
