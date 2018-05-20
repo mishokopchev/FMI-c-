@@ -9,6 +9,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.3" />
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="AWS.Logger.Core" Version="1.1.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,8 @@
     <Folder Include="Serializer\" />
     <Folder Include="XML\" />
     <Folder Include="XmlDto\" />
+    <Folder Include="Adapter\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyEnumeration.cs" />
@@ -28,5 +31,8 @@
     <Compile Remove="Serializer\ReaderBuilder.cs" />
     <Compile Remove="Serializer\Settings.cs" />
     <Compile Remove="Serializer\Resolver.cs" />
+    <Compile Remove="Models\AtributeHero.cs" />
+    <Compile Remove="Models\Dota.cs" />
+    <Compile Remove="XmlDto\Misho.cs" />
   </ItemGroup>
 </Project>

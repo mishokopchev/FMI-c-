@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace aspdota.Models
+namespace aspdota.XmlDto
 {
     [XmlRoot(ElementName = "skill")]
     [XmlType("skill")]
     public class Skill
     {
-        [XmlIgnore]
-        public int SkillID { get; set; }
         [XmlElement(ElementName = "num1")]
         public string Num1 { get; set; }
         [XmlElement(ElementName = "num2")]

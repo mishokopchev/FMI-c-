@@ -13,7 +13,6 @@ namespace asp_dota
 {
     public class Startup
     {
-        private static string DB = @"Server=localhost;database=asp;uid=root;pwd=rootroot;";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,8 +24,9 @@ namespace asp_dota
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<DotaContext>(options =>
-                                               options.UseMySQL(Startup.DB));
+            //services.AddDbContext<DotaContext>(options =>
+                                               //options.UseMySQL(Startup.DB));
+            services.AddDbContext<DotaContext>();
             services.AddMvc();
         }
 

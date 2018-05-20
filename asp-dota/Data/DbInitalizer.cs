@@ -7,22 +7,26 @@ namespace aspdota.Data
 {
     public class DbInitializer
     {
-        public DbInitializer()
+        private DbContext DbContext { get; set; }
+
+        public DbInitializer(DotaContext context)
         {
+            this.DbContext = context;
         }
 
-        public void Initialize(DbContext context)
+        public void Initialize()
         {
+            
             try
             {
-
-                context.Database.EnsureCreated();
+                this.DbContext.Database.EnsureCreated();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
         }
+        /*
         public Building CreateBulding()
         {
             Building building = new Building
@@ -83,5 +87,6 @@ namespace aspdota.Data
             }
 
         }
+*/
     }
 }

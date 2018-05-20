@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE dota SYSTEM "dota.dtd">
 <dota>
   <game>
     <name>dwqdqw</name>
@@ -38,7 +39,7 @@
       <armor>wqwq</armor>
       <dps>12</dps>
     </hero>
-    <hero id="EarthDick" attack="melee" affiliation="scorge">
+    <hero id="misho" attack="melee" affiliation="scorge">
       <title>wqq</title>
       <atribute short="AGI" />
       <status>21</status>

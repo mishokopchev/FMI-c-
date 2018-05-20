@@ -4,24 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 using aspdota.Models;
 
-namespace aspdota.Models
+namespace aspdota.XmlDto
 {
     [XmlRoot("item")]
     [XmlType("item")]
     public class Item
     {
         
-        [XmlAttributeAttribute(AttributeName = "id")]
-        public int ID { get; set; }
         [XmlAttributeAttribute(AttributeName = "slot")]
         public int Slot { get; set; }
-        [XmlIgnore]
-        public Hero Hero { get; set; }
-
-        public string HeroName { get { return Hero.ID; } set { _heroName = value; } }
         [XmlAttributeAttribute(AttributeName = "hero")]
-        [NotMapped]
-        public string _heroName { get; set; }
+        public string HeroName { get; set; }
         [XmlElement(ElementName = "merchant")]  
         public string Merchant { get; set; }
         [XmlElement(ElementName = "price")]  

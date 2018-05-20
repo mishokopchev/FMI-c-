@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace aspdota.Models
+namespace aspdota.XmlDto
 {   
     [XmlRoot(ElementName = "game")]
     [XmlType("game")]
     public class Game
     {
-        [XmlIgnore]
-        public int DotaId { get; set; }
         [XmlElement(ElementName = "name")]  
         public string Name { get; set; }
         [XmlElement(ElementName = "genre")]  

@@ -7,8 +7,8 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using aspdota.Data;
-using aspdota.Models;
 using aspdota.Serializer;
+using aspdota.XmlDto;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,24 +21,24 @@ namespace asp_dota
     {
         public static void Main(string[] args)
         {
-            Reader reader = new Reader();
+            //Reader reader = new Reader();
             //reader.CheckXMlwithDTD();
             //reader.Serialize();
 
-            DesirealizeDota();
 
             //Serialization();
 
             //var host = BuildWebHost(args);
-            //var dbInitiliazer = new DbInitializer();
-
             //using (var scope = host.Services.CreateScope())
             //{
             //    var services = scope.ServiceProvider;
             //    try
             //    {
             //        var context = services.GetRequiredService<DotaContext>();
-            //        dbInitiliazer.Initialize(context);
+            //        var dbInitiliazer = new DbInitializer(context);
+            //        //TODO check the logger that is created here in the application settings
+            //        var logger = services.GetRequiredService<ILogger<Program>>();
+            //        dbInitiliazer.Initialize();
             //    }
             //    catch (Exception ex)
             //    {
@@ -49,46 +49,58 @@ namespace asp_dota
 
             //host.Run();
 
+            //checkXml();
+            Reader<Dota> reader = new Reader<Dota>();
+            Dota dota = dota1();
+            reader.Serialize(dota,"/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
+
 
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+                   .UseStartup<Startup>().ConfigureLogging((logging) => logging.AddDebug().AddConsole().AddConsole())
                 .Build();
 
 
-        public static void Serialization(){
+        public static void checkXml()
+        {
+            Reader<Dota> reader = new Reader<Dota>();
+            string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
+            reader.validateFiles(fs);
+        }
 
-            //Dota Dota = new Dota();
-            //TextWriter FileStream = new StreamWriter("test.xml");
-            //XmlSerializer XmlSerializer = new XmlSerializer(typeof(Dota));
-            //XmlSerializer.Serialize(FileStream,Dota);
 
-            //XmlSerializer dotaSerializer = new XmlSerializer(typeof(Dota));
-            //TextReader textReader = new StreamReader("/Users/mihailkopchev/asp/xml_types/valid_xml_1.xml");
-            //Dota dota  = (aspdota.Models.Dota)dotaSerializer.Deserialize(textReader);
-            //Console.WriteLine(dota);
-            try{
-                
-            
+
+
+        public static Dota dota1()
+        {
+            Dota dota = new Dota();
+
             Game game = new Game
             {
                 Designer = "dqwdwq",
                 Name = "dwqdqw",
                 Genre = "dqwdqw"
-
             };
 
-            var db = new DbInitializer();
-            Building building = db.CreateBulding();
-
-            Dota dota = new Dota();
-            dota.Buildings = new List<Building>();
-            dota.Buildings.Add(building);
-            dota.Buildings.Add(building);
             dota.Game = game;
 
+            Building building = new Building
+            {
+                Type = "building",
+                Side = Side.scorge,
+                Main = "main",
+                Region = "region",
+                Life = 1,
+                Defence = 123,
+                Damage = 1
+            };
+
+            dota.Buildings.Add(building);
+            dota.Buildings.Add(building);
+
+
             Skill skill = new Skill
             {
                 Num1 = "ewq",
@@ -96,104 +108,123 @@ namespace asp_dota
                 Num3 = "dqwdqw",
                 Num4 = "dwqdqq"
             };
-            Hero hero = db.CreateHero(skill);
-            dota.Heroes = new List<Hero>();
+
+            AttributeHero atr = new AttributeHero
+            {
+                Short = Short.AGI
+            };
+
+            Hero hero = new Hero
+            {
+                Attack = Attack.melee,
+                Affiliation = Affiliation.scorge,
+                Title = "titole",
+                Short = atr,
+                Status = "status",
+                Movespeed = 123,
+                Armor = "kur",
+                DPS = 123
+
+            };
             dota.Heroes.Add(hero);
             dota.Heroes.Add(hero);
 
-                Effect eff = new Effect
-                {
-                    Main = "dobre",
-                    Secondary = "qko da"
-                };
-
-                List<Effect> effects = new List<Effect>();
-                effects.Add(eff);
-                effects.Add(eff);
-            dota.Items = new List<Item>();
-            
-                Item item = db.CreateItem(effects, hero);
-            dota.Items.Add(item);
-            dota.Items.Add(item);
-
-                TextWriter FileStream = new StreamWriter("/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/generated.xml");
-            XmlSerializer XmlSerializer = new XmlSerializer(typeof(Dota));
-            XmlSerializer.Serialize(FileStream,dota);
-            }
-            catch(Exception e){
-                Console.WriteLine(e);
-            }
-
-            //serialializeItem();
-            
-
-        }
-        public static void DesirealizeDota(){
-            try{
-                XmlSerializer xml = new XmlSerializer(typeof(Dota));
-                StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/generated.xml");
-                Dota dota = (aspdota.Models.Dota)xml.Deserialize(reader);
-
-            }catch(Exception e){
-                Console.Write(e);
-            }
-        }
-        public static void DesilializeHero(){
-            try{
-                XmlSerializer heroSerializer = new XmlSerializer(typeof(Hero));
-                StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/test1.xml");
-                Hero hero = (aspdota.Models.Hero)heroSerializer.Deserialize(reader);
-                Console.WriteLine(hero.ToString());
-
-             }
-            catch(Exception e ){
-                Console.WriteLine(e);
-            }
-
-        }
-        public static void serialializeItem(){
-            try{
-                
-            
-            DbInitializer db = new DbInitializer();
-            XmlSerializer itemS = new XmlSerializer(typeof(Item));
-            TextWriter FileStream = new StreamWriter("/Users/mihailkopchev/asp/xml_types/test.xml");
+            Effect eff = new Effect
+            {
+                Main = "dobre",
+                Secondary = "qko da"
+            };
 
             List<Effect> effects = new List<Effect>();
-            Skill skill = new Skill
+            effects.Add(eff);
+            effects.Add(eff);
+
+            Item item = new Item
             {
-                Num1 = "ewq",
-                Num2 = "dqwdqw",
-                Num3 = "dqwdqw",
-                Num4 = "dwqdqq"
+                HeroName = "kur",
+                Merchant = "qk",
+                Price = 123,
+                Need = "tes",
+                Description = "da",
+                Effects = effects
             };
 
-            Hero hero = db.CreateHero(skill);
-            Item item = db.CreateItem(effects, hero);
+            dota.Items.Add(item);
+            dota.Items.Add(item);
+
+            return dota;
+
+        }
+
+        //serialializeItem();
+
+        /*
+    }
+    public static void DesirealizeDota(){
+        try{
+            XmlSerializer xml = new XmlSerializer(typeof(Dota));
+            StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/generated.xml");
+            Dota dota = (aspdota.Models.Dota)xml.Deserialize(reader);
+
+        }catch(Exception e){
+            Console.Write(e);
+        }
+    }
+    public static void DesilializeHero(){
+        try{
+            XmlSerializer heroSerializer = new XmlSerializer(typeof(Hero));
+            StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/test1.xml");
+            Hero hero = (aspdota.Models.Hero)heroSerializer.Deserialize(reader);
             Console.WriteLine(hero.ToString());
 
-            itemS.Serialize(FileStream,item);
-            }
-            catch(Exception e){
-                Console.WriteLine(e);
-            }
+         }
+        catch(Exception e ){
+            Console.WriteLine(e);
         }
 
-
-
-
-
-
-
-
-
-        }
-
-        
-
-      
-        
     }
+    public static void serialializeItem(){
+        try{
+
+
+        DbInitializer db = new DbInitializer();
+        XmlSerializer itemS = new XmlSerializer(typeof(Item));
+        TextWriter FileStream = new StreamWriter("/Users/mihailkopchev/asp/xml_types/test.xml");
+
+        List<Effect> effects = new List<Effect>();
+        Skill skill = new Skill
+        {
+            Num1 = "ewq",
+            Num2 = "dqwdqw",
+            Num3 = "dqwdqw",
+            Num4 = "dwqdqq"
+        };
+
+        Hero hero = db.CreateHero(skill);
+        Item item = db.CreateItem(effects, hero);
+        Console.WriteLine(hero.ToString());
+
+        itemS.Serialize(FileStream,item);
+        }
+        catch(Exception e){
+            Console.WriteLine(e);
+        }
+    }
+
+
+
+
+
+
+
+*/
+
+    }
+
+
+}
+      
+
 
 
 

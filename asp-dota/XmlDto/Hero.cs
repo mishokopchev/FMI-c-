@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace aspdota.Models
+namespace aspdota.XmlDto
 {
     [XmlRoot(ElementName = "hero")]
     [XmlType("hero")]
     public class Hero
     {
-        [XmlAttributeAttribute(AttributeName = "id")]
-        public String ID { get;  set; }
         [XmlAttributeAttribute(AttributeName = "attack")]
         public Attack Attack { get; set; } // range/melee
         [XmlAttributeAttribute(AttributeName = "affiliation")]
@@ -24,12 +22,11 @@ namespace aspdota.Models
         [XmlElement(ElementName = "movespeed")]
         public int Movespeed { get; set; }
         [XmlArray(ElementName = "skills")]
-        public List<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; } = new List<Skill>();
         [XmlElement(ElementName = "armor")]
         public String Armor { get; set; }
         [XmlElement(ElementName = "dps")]
         public int DPS { get; set; }
-
 
         public Hero()
         {

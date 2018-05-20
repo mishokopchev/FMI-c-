@@ -1,6 +1,6 @@
 using System;
 
-namespace asp_dota.Models
+namespace asp_dota.XmlDto
 {
     public class ErrorViewModel
     {

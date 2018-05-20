@@ -2,15 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace aspdota.Models
+namespace aspdota.XmlDto
 {
     [XmlRoot("building")]
     [XmlType("building")]
     public class Building
     {   
-        [Key]
-        [XmlIgnore]
-        public int BuildingId { get; set; }
         [XmlAttributeAttribute(AttributeName = "side")]
         public Side Side { get; set; } //sentinel|scorge
         [XmlAttributeAttribute(AttributeName = "main")]
@@ -25,8 +22,6 @@ namespace aspdota.Models
         public int Defence { get; set; }
         [XmlElement(ElementName = "damage")]
         public int Damage { get; set; }
-
-
 
         public Building()
         {
