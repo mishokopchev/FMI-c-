@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
+using aspdota.Commons;
 
 namespace aspdota.Models
 {
     
-    public class Hero
+    public class HeroEntity
     {
         [Key]
         [Column("id")]
@@ -19,24 +20,13 @@ namespace aspdota.Models
         public Short AtributeType { get; set; }
         public String Status { get; set; }
         public int Movespeed { get; set; }
-        public List<Skill> Skills { get; set; }
+        public List<SkillEntity> Skills { get; set; }
         public String Armor { get; set; }
         public int DPS { get; set; }
 
-        public Hero()
+        public HeroEntity()
         {
         }
-    }
-    public enum Attack{
-        range,melee
-    }
-    public enum Affiliation{
-        sentinel,scorge
-    }
-
-    public enum Short
-    {
-        AGI, INT, STR
     }
 
 

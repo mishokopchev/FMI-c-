@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using aspdota.Commons;
 using aspdota.Data;
 using aspdota.Serializer;
 using aspdota.XmlDto;
@@ -28,28 +29,28 @@ namespace asp_dota
 
             //Serialization();
 
-            //var host = BuildWebHost(args);
-            //using (var scope = host.Services.CreateScope())
-            //{
-            //    var services = scope.ServiceProvider;
-            //    try
-            //    {
-            //        var context = services.GetRequiredService<DotaContext>();
-            //        var dbInitiliazer = new DbInitializer(context);
-            //        //TODO check the logger that is created here in the application settings
-            //        var logger = services.GetRequiredService<ILogger<Program>>();
-            //        dbInitiliazer.Initialize();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        var logger = services.GetRequiredService<ILogger<Program>>();
-            //        logger.LogError(ex, "An error occurred while seeding the database.");
-            //    }
-            //}
+            var host = BuildWebHost(args);
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<DotaContext>();
+                    var dbInitiliazer = new DbInitializer(context);
+                    //TODO check the logger that is created here in the application settings
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    dbInitiliazer.Initialize();
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred while seeding the database.");
+                }
+            }
 
-            //host.Run();
-
+            host.Run();
             checkXml();
+
             Reader<Dota> reader = new Reader<Dota>();
 
             //  Dota dota = dota1();
@@ -75,7 +76,8 @@ namespace asp_dota
         {
             Reader<Dota> reader = new Reader<Dota>();
             string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
-            //reader.validateFiles(fs);
+            reader.ValidateContent(fs);
+
         }
 
 

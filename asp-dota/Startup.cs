@@ -29,7 +29,7 @@ namespace asp_dota
             services.AddSingleton<IGameRepository, GameRepository>();
             services.AddSingleton<IDotaRepository, DotaRepository>();
             services.AddTransient<IReader<aspdota.XmlDto.Dota>, Reader<aspdota.XmlDto.Dota>>();
-            services.AddSingleton<Adapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota >> ();
+            services.AddSingleton<Adapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter> ();
             // mvc config
             services.AddDbContext<DotaContext>();
             services.AddMvc();

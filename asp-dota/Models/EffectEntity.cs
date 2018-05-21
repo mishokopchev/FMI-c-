@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace aspdota.Models
 {   
     
-    public class Effect
+    public class EffectEntity
     { 
         public int EffectId { get; set; }
         public string Main { get; set; }

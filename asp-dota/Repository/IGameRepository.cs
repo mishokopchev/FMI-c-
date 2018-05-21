@@ -5,7 +5,7 @@ namespace aspdota.Repository
 {
     public interface IGameRepository
     {
-        void Persist(Game game);
+        void Persist(GameEntity game);
 
     }
 }

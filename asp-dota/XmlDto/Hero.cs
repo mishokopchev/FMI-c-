@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using aspdota.Commons;
 
 namespace aspdota.XmlDto
 {
@@ -9,6 +10,8 @@ namespace aspdota.XmlDto
     [XmlType("hero")]
     public class Hero
     {
+        [XmlAttribute(AttributeName = "id")]
+        public string ID { get; set; }
         [XmlAttributeAttribute(AttributeName = "attack")]
         public Attack Attack { get; set; } // range/melee
         [XmlAttributeAttribute(AttributeName = "affiliation")]
@@ -31,12 +34,6 @@ namespace aspdota.XmlDto
         public Hero()
         {
         }
-    }
-    public enum Attack{
-        range,melee
-    }
-    public enum Affiliation{
-        sentinel,scorge
     }
 
 

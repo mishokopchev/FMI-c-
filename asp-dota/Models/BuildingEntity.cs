@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace aspdota.Models
 {
-    public class Building
+    public class BuildingEntity
     {   
         [Key]
         public int BuildingId { get; set; }
@@ -17,7 +17,7 @@ namespace aspdota.Models
         public int Defence { get; set; }
         public int Damage { get; set; }
 
-        public Building()
+        public BuildingEntity()
         {
             
         }

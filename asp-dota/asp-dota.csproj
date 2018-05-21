@@ -10,6 +10,7 @@
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="AWS.Logger.Core" Version="1.1.8" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
     <Folder Include="Adapter\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Repository\" />
+    <Folder Include="Commons\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyEnumeration.cs" />
@@ -35,5 +37,26 @@
     <Compile Remove="Models\AtributeHero.cs" />
     <Compile Remove="XmlDto\Misho.cs" />
     <Compile Remove="Adapter\GameEntityAdapter.cs" />
+    <Compile Remove="Views\Home\test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Home\test.cshtml" />
+    <None Remove="XML\valid_xml_1.xml" />
+    <None Remove="XML\valid_xml_2.xml" />
+    <None Remove="XML\valid_xml_3.xml" />
+    <None Remove="XML\valid_xml_4.xml" />
+    <None Remove="XML\valid_xml_5.xml" />
+    <None Remove="Models\GameEntity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\Home\Misho.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Misho.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Home\Misho.cs">
+      <DependentUpon>Misho.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

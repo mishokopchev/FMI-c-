@@ -16,7 +16,7 @@ namespace aspdota.Repository
             _logger = logger;
         }
 
-        public void Persist(Game game)
+        public void Persist(GameEntity game)
         {
             throw new NotImplementedException();
         }

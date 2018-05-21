@@ -3,7 +3,7 @@ using aspdota.Models;
 
 namespace aspdota.Adapter
 {
-    public class GameToGameDTOAdapter : Adapter<GameEntity,Game>
+    public class GameToGameDTOAdapter : Adapter<GameEntity,GameEntity>
     {
         
         public GameToGameDTOAdapter()
@@ -11,7 +11,7 @@ namespace aspdota.Adapter
             
         }
 
-        public GameEntity Adapt(Game obj)
+        public GameEntity Adapt(GameEntity obj)
         {
             
             throw new NotImplementedException();

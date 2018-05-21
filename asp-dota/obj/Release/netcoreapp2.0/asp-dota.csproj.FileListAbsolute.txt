@@ -1,0 +1,11 @@
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/bin/Release/netcoreapp2.0/asp-dota.deps.json
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/bin/Release/netcoreapp2.0/asp-dota.runtimeconfig.json
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/bin/Release/netcoreapp2.0/asp-dota.runtimeconfig.dev.json
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/bin/Release/netcoreapp2.0/asp-dota.dll
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/bin/Release/netcoreapp2.0/asp-dota.pdb
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.csprojResolveAssemblyReference.cache
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.csproj.CoreCompileInputs.cache
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.AssemblyInfoInputs.cache
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.AssemblyInfo.cs
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.dll
+/Users/mihailkopchev/Projects/asp-dota/asp-dota/obj/Release/netcoreapp2.0/asp-dota.pdb

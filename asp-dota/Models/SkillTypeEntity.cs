@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace aspdota.Models
 {
-    public class SkillType
+    public class SkillTypeEntity
 
     {   
         [Key]
         public String SkillName { get; set; }
         public String SkillDescription { get; set; }
 
-        public SkillType()
+        public SkillTypeEntity()
         {
         }
     }

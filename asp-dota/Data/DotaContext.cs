@@ -9,12 +9,12 @@ namespace aspdota.Data
     {
         private static string DB = @"Server=localhost;database=asp;uid=root;pwd=rootroot;";
 
-        public DbSet<Hero> Hero { get; set; }
-        public DbSet<Item> Item{ get; set; }
-        public DbSet<Skill> Skill{ get; set; }
-        public DbSet<Effect> Effect{ get; set; }
-        public DbSet<SkillType> SkillType{ get; set; }
-        public DbSet<Game> Game{ get; set; }
+        public DbSet<HeroEntity> Hero { get; set; }
+        public DbSet<ItemEntity> Item{ get; set; }
+        public DbSet<SkillEntity> Skill{ get; set; }
+        public DbSet<EffectEntity> Effect{ get; set; }
+        public DbSet<SkillTypeEntity> SkillType{ get; set; }
+        public DbSet<GameEntity> Game{ get; set; }
 
         public DotaContext(DbContextOptions<DotaContext> options) : base(options)
         {
@@ -26,12 +26,12 @@ namespace aspdota.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Hero>().ToTable("hero".ToUpper());
-            modelBuilder.Entity<Effect>().ToTable("effect".ToUpper());
-            modelBuilder.Entity<Building>().ToTable("building".ToUpper());
-            modelBuilder.Entity<Skill>().ToTable("SKILL");
-            modelBuilder.Entity<Item>().ToTable("ITEM");
-            modelBuilder.Entity<Game>().ToTable("GAME");
+            modelBuilder.Entity<HeroEntity>().ToTable("hero".ToUpper());
+            modelBuilder.Entity<EffectEntity>().ToTable("effect".ToUpper());
+            modelBuilder.Entity<BuildingEntity>().ToTable("building".ToUpper());
+            modelBuilder.Entity<SkillEntity>().ToTable("SKILL");
+            modelBuilder.Entity<ItemEntity>().ToTable("ITEM");
+            modelBuilder.Entity<GameEntity>().ToTable("GAME");
 
         }
 

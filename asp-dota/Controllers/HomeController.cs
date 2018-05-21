@@ -28,6 +28,11 @@ namespace asp_dota.Controllers
 
             return View();
         }
+        public IActionResult Misho()
+        {
+            ViewData["Love"] = "I really miss u baby :(";
+            return View();
+        }
 
         public IActionResult Error()
         {
