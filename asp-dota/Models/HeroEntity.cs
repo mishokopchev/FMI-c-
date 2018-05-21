@@ -12,7 +12,7 @@ namespace aspdota.Models
     {
         [Key]
         [Column("id")]
-        public String Name { get;  set; }
+        public String ID { get;  set; }
         public Attack Attack { get; set; } // range/melee
         public Affiliation Affiliation { get; set; } // sentinel|scorge
         public String Title { get; set; }

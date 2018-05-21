@@ -10,14 +10,29 @@ namespace aspdota.Repository
         private DotaContext _dbContext;
         private ILogger _logger;
 
-        public DotaRepository()
+        public DotaRepository(DotaContext context)
         {
-            
+            this._dbContext = context;
         }
 
-        public void Persist(DotaEntity entity)
+        public void Persist(DotaEntity dotaEntity)
         {
-            throw new NotImplementedException();
+            if(dotaEntity != null)
+            {
+                try
+                {
+                    
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+
+            }
+
+
+
+
         }
     }
 }

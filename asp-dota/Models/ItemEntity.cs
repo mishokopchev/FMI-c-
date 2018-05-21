@@ -18,6 +18,12 @@ namespace aspdota.Models
         public string Need { get; set; }
         public string Description { get; set; }
 
+        public void AddEffect(EffectEntity eff){
+            if(eff != null){
+                Effects.Add(eff);
+            }
+        }
+
         public ItemEntity()
         {
         }

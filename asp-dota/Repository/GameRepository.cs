@@ -18,7 +18,9 @@ namespace aspdota.Repository
 
         public void Persist(GameEntity game)
         {
-            throw new NotImplementedException();
+            if(game !=null){
+                
+            }
         }
     }
 }

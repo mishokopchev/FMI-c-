@@ -11,6 +11,7 @@ namespace aspdota.XmlDto
         
         [XmlAttributeAttribute(AttributeName = "short")]
         public Short Short { get; set; } // AGI|INT|STR
+        public String Description { get; set; }
     }
 
 }

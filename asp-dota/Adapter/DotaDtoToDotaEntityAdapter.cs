@@ -39,7 +39,7 @@ namespace aspdota.Adapter
                     buildingEntity.Side = buildingEntity.Side;
                     buildingEntity.Type = building.Type;
 
-                    dotaEntity.Buildings.Add(buildingEntity);
+                    dotaEntity.AddBuilding(buildingEntity);
 
                 }
 
@@ -49,52 +49,79 @@ namespace aspdota.Adapter
 
             if(obj.Heroes != null && obj.Heroes.Capacity > 0){
                 obj.Heroes.ForEach((Hero heroDTO)=> {
-                    HeroEntity heroEntity = new HeroEntity();
-                    heroEntity.Affiliation = heroDTO.Affiliation;
-                    heroEntity.Armor = heroDTO.Armor;
-                    heroEntity.Atribute = heroDTO.Short.Description;
-                    heroEntity.AtributeType = heroDTO.Short.Short;
-                    heroEntity.Attack = heroDTO.Attack;
-                    heroEntity.DPS = heroDTO.DPS;
-                    heroEntity.Movespeed = heroDTO.Movespeed;
-                    heroEntity.ID = heroDTO.ID;
-                    heroEntity.Status = heroDTO.Status;
-                    heroEntity.Title = heroDTO.Title;
+                    HeroEntity heroEntity = ConvertHero(heroDTO);
+                    dotaEntity.AddHero(heroEntity);
+                });
+            }
 
-                    heroEntity.Skills = new List<SkillEntity>();
-                    heroDTO.Skills.ForEach(skill=>{
-                        heroEntity.Skills.Add(AdaptSkill(skill));
+            dotaEntity.Items = new List<ItemEntity>();
+            if(obj.Items != null && obj.Items.Capacity > 0){
+                obj.Items.ForEach((itemDTO) => {
+                    ItemEntity itemEntity = new ItemEntity
+                    {
+                        Merchant = itemDTO.Merchant,
+                        Price = itemDTO.Price,
+                        Need = itemDTO.Need,
+                        Description = itemDTO.Description,
+                    };
+
+                    string heroId = itemDTO.HeroName;
+                    Hero heroDTO = obj.Heroes.Find((Hero searchd) => searchd.ID == heroId);
+
+                    HeroEntity heroEntity = ConvertHero(heroDTO);
+                    itemEntity.Hero = heroEntity;
+                    dotaEntity.AddItem(itemEntity);
+
+                    itemDTO.Effects.ForEach((Effect eff)=>{
+                        EffectEntity effEntity = new EffectEntity
+                        {
+                            Main = eff.Main,
+                            Secondary = eff.Secondary
+                        };
+
+                        itemEntity.AddEffect(effEntity);
                     });
 
                 });
-
             }
-
-            if(obj.Items != null && obj.Items.Capacity > 0){
-                //do it for items the same
-            }
-
-
             return dotaEntity;
 
-
-
         }
-        private SkillEntity AdaptSkill(Skill skill){
+        private SkillEntity ConvertSkill(Skill skill){
             SkillEntity entity = new SkillEntity();
             entity.SkillTypes = new List<SkillTypeEntity>();
-
-
-
             Type type = skill.GetType();
             foreach(var f in type.GetFields().Where(f => f.IsPublic)){
-                
                 SkillTypeEntity skillType = new SkillTypeEntity();
                 skillType.SkillName = (string)f.GetValue(skill);
                 entity.AddSkill(skillType);
             }
-
             return entity;
         }
+        private HeroEntity ConvertHero(Hero heroDTO){
+            
+            HeroEntity heroEntity = new HeroEntity();
+            heroEntity.Affiliation = heroDTO.Affiliation;
+            heroEntity.Armor = heroDTO.Armor;
+            heroEntity.Atribute = heroDTO.Short.Description;
+            heroEntity.AtributeType = heroDTO.Short.Short;
+            heroEntity.Attack = heroDTO.Attack;
+            heroEntity.DPS = heroDTO.DPS;
+            heroEntity.Movespeed = heroDTO.Movespeed;
+            heroEntity.ID = heroDTO.ID;
+            heroEntity.Status = heroDTO.Status;
+            heroEntity.Title = heroDTO.Title;
+
+            heroEntity.Skills = new List<SkillEntity>();
+            heroDTO.Skills.ForEach(skill => {
+                heroEntity.Skills.Add(ConvertSkill(skill));
+            });
+
+            return heroEntity;
+
+        }
+
+
+
     }
 }
