@@ -26,10 +26,10 @@ namespace aspdota.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<HeroEntity>().ToTable("hero".ToUpper());
-            modelBuilder.Entity<EffectEntity>().ToTable("effect".ToUpper());
-            modelBuilder.Entity<BuildingEntity>().ToTable("building".ToUpper());
-            modelBuilder.Entity<SkillEntity>().ToTable("SKILL");
+            modelBuilder.Entity<HeroEntity>().ToTable("HERO");
+            modelBuilder.Entity<EffectEntity>().ToTable("EFFECT");
+            modelBuilder.Entity<BuildingEntity>().ToTable("BUILDING");
+            modelBuilder.Entity<SkillEntity>().ToTable("SKILL;");
             modelBuilder.Entity<ItemEntity>().ToTable("ITEM");
             modelBuilder.Entity<GameEntity>().ToTable("GAME");
 

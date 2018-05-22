@@ -1,26 +1,14 @@
 ﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Repository/DotaRepository.cs">
     <Files>
-      <File FileName="asp-dota/XmlDto/Dota.cs" Line="12" Column="18" />
-      <File FileName="asp-dota/Models/GameEntity.cs" Line="12" Column="37" />
-      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="16" Column="34" />
-      <File FileName="asp-dota/Adapter/GameToGameDTOAdapter.cs" Line="14" Column="15" />
-      <File FileName="asp-dota/Commons/EmptyEnumeration.cs" Line="4" Column="33" />
-      <File FileName="asp-dota/Models/SkillTypeEntity.cs" Line="6" Column="22" />
-      <File FileName="asp-dota/Models/SkillEntity.cs" Line="15" Column="30" />
-      <File FileName="asp-dota/Models/DotaEntity.cs" Line="31" Column="39" />
-      <File FileName="asp-dota/Models/ItemEntity.cs" Line="23" Column="34" />
-      <File FileName="asp-dota/Repository/GameRepository.cs" Line="19" Column="17" />
-      <File FileName="asp-dota/Repository/DotaRepository.cs" Line="20" Column="16" />
-      <File FileName="asp-dota/XmlDto/Hero.cs" Line="14" Column="39" NotebookId="1" />
-      <File FileName="asp-dota/Commons/Attack.cs" Line="6" Column="21" NotebookId="1" />
-      <File FileName="asp-dota/Commons/Affiliation.cs" Line="4" Column="28" NotebookId="1" />
-      <File FileName="asp-dota/XmlDto/Item.cs" Line="23" Column="23" NotebookId="1" />
-      <File FileName="asp-dota/Models/HeroEntity.cs" Line="15" Column="25" NotebookId="1" />
-      <File FileName="asp-dota/Commons/Short.cs" Line="8" Column="2" NotebookId="1" />
-      <File FileName="asp-dota/Program.cs" Line="124" Column="34" NotebookId="1" />
-      <File FileName="asp-dota/XmlDto/AtributeHero.cs" Line="14" Column="48" NotebookId="1" />
-      <File FileName="asp-dota/XmlDto/Effect.cs" Line="14" Column="6" NotebookId="1" />
+      <File FileName="asp-dota/Adapter/Adapter.cs" Line="9" Column="1" />
+      <File FileName="asp-dota/Serializer/Reader.cs" Line="6" Column="32" />
+      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/Repository/DotaRepository.cs" Line="74" Column="25" />
+      <File FileName="asp-dota/Data/DotaContext.cs" Line="17" Column="29" />
+      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="29" Column="9" />
+      <File FileName="asp-dota/Repository/GameRepository.cs" Line="20" Column="10" />
+      <File FileName="asp-dota/Repository/IDotaRepository.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
@@ -30,10 +18,8 @@
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="175" column="1" />
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/XmlDto/ErrorViewModel.cs" relfile="asp-dota/XmlDto/ErrorViewModel.cs" line="5" column="1" />
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Models/Dota.cs" relfile="asp-dota/Models/Dota.cs" line="13" column="39" />
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Serializer/Reader.cs" relfile="asp-dota/Serializer/Reader.cs" line="91" column="1" />
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Serializer/Reader.cs" relfile="asp-dota/Serializer/Reader.cs" line="99" column="1" />
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="236" column="1" />
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="59" column="39" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="58" column="39" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
