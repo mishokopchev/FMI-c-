@@ -20,18 +20,36 @@ namespace aspdota.Serializer
         private XmlSerializer _xmlSerializer; 
         private ILogger _logger;
 
-        public Reader (){}
+        public Reader (){
+            this._xmlSerializer = new XmlSerializer(typeof(T));
+        }
         public Reader(ILogger logger){
             _logger = logger;
         }
 
+        public T Deserialize(string file)
+        {
+            TextReader reader = null;
+            try{
+                reader = new StreamReader(file);
+                return this._desirializeInternal(reader);
+
+            }catch(Exception e){
+                throw new CannotDeserializeException(e.Message, e.GetBaseException());
+            }
+            finally{
+                if(reader != null){
+                    reader.Close();
+                }
+            }
+
+
+        }
         public T Deserialize(TextReader reader)
         {
             try
             {
-                this._xmlSerializer = new XmlSerializer(typeof(T));
-                T obj = (T)this._xmlSerializer.Deserialize(reader);
-                return obj;
+                return this._desirializeInternal(reader);
             }
             catch (Exception e)
             {
@@ -41,32 +59,43 @@ namespace aspdota.Serializer
 
         public void Serialize(T obj, TextWriter streamWriter)
         {
-            try
-            {
-                this._xmlSerializer = new XmlSerializer(typeof(T));
-                this._xmlSerializer.Serialize(streamWriter, obj);
+            try{
+                this._serializeInternal(obj,streamWriter);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                throw new CannotSerializeException(e.Message, e);
             }
         }
 
-        public T Deserialize(string file){
-            return this.Deserialize(new StreamReader(file));
+        public void Serialize(T obj,string where){
+            TextWriter writer = null;
+            try
+            {
+                writer = new StreamWriter(where);
+                this._serializeInternal(obj, writer);
+            }
+            catch (Exception e)
+            {
+                throw new CannotSerializeException(e.Message, e);
+            }
+            finally{
+                if(writer != null){
+                    writer.Close();
+                }
+            }
 
         }
-
-        public void Serialize(T obj,string where){
-             this.Serialize(obj, new StreamWriter(where));
+        private void _serializeInternal(T obj,TextWriter writer){
+            this._xmlSerializer.Serialize(writer,obj);
 
         }
         public void ValidateContent(string filesystem)
         {
-            string fs = filesystem != null ? filesystem : FILESYSTEM;
+            string fs = filesystem ?? FILESYSTEM;
             InitSettings(ValidationType.DTD,DtdProcessing.Parse);
             InitResolver(fs);
-            useEventHandler();
+            UseEventHandler();
 
             try
             {
@@ -126,12 +155,16 @@ namespace aspdota.Serializer
             xmlResolver.ResolveUri(null, fs);
             _settings.XmlResolver = xmlResolver;
         }
-        private void useEventHandler()
+        private void UseEventHandler()
         {
             ValidationEventHandler eventHandler = new ValidationEventHandler(ValidationCallBack);
             _settings.ValidationEventHandler += eventHandler;
         }
-
+        private T _desirializeInternal(TextReader reader)
+        {
+            T obj = (T)this._xmlSerializer.Deserialize(reader);
+            return obj;
+        }
 
     }
 }

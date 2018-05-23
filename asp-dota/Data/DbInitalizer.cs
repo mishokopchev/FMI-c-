@@ -26,6 +26,8 @@ namespace aspdota.Data
                 Console.WriteLine(e);
             }
         }
+
+
         /*
         public Building CreateBulding()
         {
@@ -87,6 +89,6 @@ namespace aspdota.Data
             }
 
         }
-*/
+        */
     }
 }

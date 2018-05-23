@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 using aspdota.Commons;
 using aspdota.Data;
 using aspdota.Serializer;
 using aspdota.XmlDto;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -72,6 +66,17 @@ namespace asp_dota
                 .Build();
 
 
+
+        public static void Generate(){
+            string filesystem = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/";
+            IReader<Dota> reader = new Reader<Dota>();
+            for (int k = 8; k < 20;k++){
+                string curFile = "valid_xml_" + k;
+                StreamWriter ws = File.AppendText(filesystem + curFile);
+                Dota dota = dota1();
+                reader.Serialize(dota,ws);
+            }
+        }
         public static void checkXml()
         {
             Reader<Dota> reader = new Reader<Dota>();
@@ -89,9 +94,9 @@ namespace asp_dota
 
             Game game = new Game
             {
-                Designer = "dqwdwq",
-                Name = "dwqdqw",
-                Genre = "dqwdqw"
+                Designer = "Ivan",
+                Name = "Ivanov",
+                Genre = "Hentai"
             };
 
             dota.Game = game;
@@ -113,10 +118,10 @@ namespace asp_dota
 
             Skill skill = new Skill
             {
-                Num1 = "ewq",
-                Num2 = "dqwdqw",
-                Num3 = "dqwdqw",
-                Num4 = "dwqdqq"
+                Num1 = "skill1",
+                Num2 = "skill2",
+                Num3 = "skill3",
+                Num4 = "skill4"
             };
 
             AttributeHero atr = new AttributeHero
@@ -132,17 +137,16 @@ namespace asp_dota
                 Short = atr,
                 Status = "status",
                 Movespeed = 123,
-                Armor = "kur",
-                DPS = 123
+                Armor = "armour",
+                DPS = 123,
+                ID = "MIhail"
 
             };
             dota.Heroes.Add(hero);
-            dota.Heroes.Add(hero);
-
             Effect eff = new Effect
             {
-                Main = "dobre",
-                Secondary = "qko da"
+                Main = "killer",
+                Secondary = "spread"
             };
 
             List<Effect> effects = new List<Effect>();
@@ -151,12 +155,12 @@ namespace asp_dota
 
             Item item = new Item
             {
-                HeroName = "kur",
-                Merchant = "qk",
+                HeroName = "Mihail",
+                Merchant = "Kopchev",
                 Price = 123,
                 Need = "tes",
                 Description = "da",
-                Effects = effects
+                Effects = effects,
             };
 
             dota.Items.Add(item);

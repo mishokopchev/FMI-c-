@@ -1,25 +1,36 @@
 ﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Repository/DotaRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Program.cs">
     <Files>
-      <File FileName="asp-dota/Adapter/Adapter.cs" Line="9" Column="1" />
-      <File FileName="asp-dota/Serializer/Reader.cs" Line="6" Column="32" />
-      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Repository/DotaRepository.cs" Line="74" Column="25" />
-      <File FileName="asp-dota/Data/DotaContext.cs" Line="17" Column="29" />
-      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="29" Column="9" />
-      <File FileName="asp-dota/Repository/GameRepository.cs" Line="20" Column="10" />
-      <File FileName="asp-dota/Repository/IDotaRepository.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/Program.cs" Line="92" Column="10" />
+      <File FileName="asp-dota/Serializer/Reader.cs" Line="40" Column="33" />
+      <File FileName="asp-dota/XmlDto/Item.cs" Line="16" Column="50" />
+      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="21" Column="14" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="asp-dota" expanded="True">
+            <Node name="asp-dota" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Serializer" expanded="True" />
+              <Node name="XML" expanded="True" />
+              <Node name="XmlDto" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.ItemProperties.asp-dota PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="175" column="1" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="179" column="1" />
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/XmlDto/ErrorViewModel.cs" relfile="asp-dota/XmlDto/ErrorViewModel.cs" line="5" column="1" />
       <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Models/Dota.cs" relfile="asp-dota/Models/Dota.cs" line="13" column="39" />
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="236" column="1" />
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="58" column="39" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="240" column="1" />
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="52" column="39" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
