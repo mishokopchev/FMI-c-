@@ -25,12 +25,13 @@ namespace aspdota.Repository
                 {
                     GameEntity gameEntity = dotaEntity.Game;
                     this.Add<GameEntity>(gameEntity);
+                   
                 }
                 catch (Exception e)
                 {
                     errMessage = "Could not persist GameEntity";
                     Console.WriteLine(errMessage);
-                    throw e;   
+                    throw new Exception(e.Message, e.InnerException);
                 }
                 try
                 {
@@ -44,7 +45,7 @@ namespace aspdota.Repository
                 {
                     errMessage = "Could not persist Hero:";
                     Console.WriteLine(errMessage);
-                    throw e;
+                    throw new Exception(e.Message, e.InnerException);
                 }
 
 
@@ -60,7 +61,7 @@ namespace aspdota.Repository
                 {
                     errMessage = "Could not persist Items:";
                     Console.WriteLine(errMessage);
-                    throw e;
+                    throw new Exception(e.Message, e.InnerException);
                 }
 
                 try
@@ -75,17 +76,23 @@ namespace aspdota.Repository
                 {
                     errMessage = "Could not persist Building:";
                     Console.WriteLine(errMessage);
-                    throw e;
+                    throw new Exception(e.Message, e.InnerException);
                 }
 
-
+                try{
+                  
+					_dbContext.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    errMessage = "Could not persist The Objects";
+                    Console.WriteLine(errMessage);
+                    throw new Exception(e.Message,e.InnerException);
+                }
             }
 
         }
 
-        public void Add<T>(T newItem) where T : class
-        {
-            _dbContext.Set<T>().Add(newItem);
-        }
+        private void Add<T>(T newItem) where T : class => _dbContext.Set<T>().Add(newItem);
     }
 }

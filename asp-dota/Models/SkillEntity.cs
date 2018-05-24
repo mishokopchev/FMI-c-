@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 
 namespace aspdota.Models
@@ -8,6 +9,7 @@ namespace aspdota.Models
     public class SkillEntity{
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SkillID { get; set; }
         public List<SkillTypeEntity> SkillTypes { get; set; } 
 

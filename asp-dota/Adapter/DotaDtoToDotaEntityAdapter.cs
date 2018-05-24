@@ -72,6 +72,7 @@ namespace aspdota.Adapter
                     itemEntity.Hero = heroEntity;
                     dotaEntity.AddItem(itemEntity);
 
+                    itemEntity.Effects = new List<EffectEntity>();
                     itemDTO.Effects.ForEach((Effect eff)=>{
                         EffectEntity effEntity = new EffectEntity
                         {

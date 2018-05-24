@@ -11,7 +11,6 @@ namespace aspdota.Models
     public class HeroEntity
     {
         [Key]
-        [Column("id")]
         public String ID { get;  set; }
         public Attack Attack { get; set; } // range/melee
         public Affiliation Affiliation { get; set; } // sentinel|scorge

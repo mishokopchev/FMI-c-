@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 using aspdota.Models;
@@ -9,6 +10,8 @@ namespace aspdota.Models
     
     public class ItemEntity
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int ID { get; set; }
         public int Slot { get; set; }
         public HeroEntity Hero { get; set; }

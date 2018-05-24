@@ -11,10 +11,6 @@ namespace aspdota.Adapter
             
         }
 
-        public GameEntity Adapt(GameEntity obj)
-        {
-            
-            throw new NotImplementedException();
-        }
+        public GameEntity Adapt(GameEntity obj) => throw new NotImplementedException();
     }
 }

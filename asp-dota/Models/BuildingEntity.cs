@@ -8,6 +8,7 @@ namespace aspdota.Models
     public class BuildingEntity
     {   
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BuildingId { get; set; }
         public Side Side { get; set; } //sentinel|scorge
         public string Main { get; set; }

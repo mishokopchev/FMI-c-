@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using aspdota.Adapter;
 using aspdota.Commons;
 using aspdota.Data;
+using aspdota.Models;
+using aspdota.Repository;
 using aspdota.Serializer;
 using aspdota.XmlDto;
 using Microsoft.AspNetCore;
@@ -31,9 +34,12 @@ namespace asp_dota
                 {
                     var context = services.GetRequiredService<DotaContext>();
                     var dbInitiliazer = new DbInitializer(context);
+                    dbInitiliazer.Initialize();
+                    _adapt(context);
+
                     //TODO check the logger that is created here in the application settings
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    dbInitiliazer.Initialize();
+
                 }
                 catch (Exception ex)
                 {
@@ -42,10 +48,10 @@ namespace asp_dota
                 }
             }
 
-            host.Run();
-            checkXml();
+            //host.Run();
+            //checkXml();
 
-            Reader<Dota> reader = new Reader<Dota>();
+            //Reader<Dota> reader = new Reader<Dota>();
 
             //  Dota dota = dota1();
             //reader.Serialize(dota,"/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
@@ -55,7 +61,7 @@ namespace asp_dota
             // tova se serializira pravilno no trqbva da se sazdata pravilno obektite i vrazkite my tqh 
             // za da mine test parvo trqbva da da ima tag za dotata
 
-
+            //_adapt();
 
 
         }
@@ -64,111 +70,35 @@ namespace asp_dota
             WebHost.CreateDefaultBuilder(args)
                    .UseStartup<Startup>().ConfigureLogging((logging) => logging.AddDebug().AddConsole().AddConsole())
                 .Build();
+        
 
-
-
-        public static void Generate(){
-            string filesystem = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/";
+        public static void _adapt(DotaContext context){
+            try{
+                
+            
+            string filesystem = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_11.xml";
             IReader<Dota> reader = new Reader<Dota>();
-            for (int k = 8; k < 20;k++){
-                string curFile = "valid_xml_" + k;
-                StreamWriter ws = File.AppendText(filesystem + curFile);
-                Dota dota = dota1();
-                reader.Serialize(dota,ws);
+            Dota dota = reader.Deserialize(filesystem);
+            DotaDtoToDotaEntityAdapter adapter = new DotaDtoToDotaEntityAdapter();
+
+            DotaEntity entity = adapter.Adapt(dota);
+            Console.WriteLine(entity);
+
+            DotaRepository dotaRepository = new DotaRepository(context);
+            dotaRepository.Persist(entity);
+
             }
-        }
-        public static void checkXml()
-        {
-            Reader<Dota> reader = new Reader<Dota>();
-            string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
-            reader.ValidateContent(fs);
+            catch(Exception e){
+                Console.WriteLine(e);
+            }
 
         }
 
 
 
 
-        public static Dota dota1()
-        {
-            Dota dota = new Dota();
-
-            Game game = new Game
-            {
-                Designer = "Ivan",
-                Name = "Ivanov",
-                Genre = "Hentai"
-            };
-
-            dota.Game = game;
-
-            Building building = new Building
-            {
-                Type = "building",
-                Side = Side.scorge,
-                Main = "main",
-                Region = "region",
-                Life = 1,
-                Defence = 123,
-                Damage = 1
-            };
-
-            dota.Buildings.Add(building);
-            dota.Buildings.Add(building);
 
 
-            Skill skill = new Skill
-            {
-                Num1 = "skill1",
-                Num2 = "skill2",
-                Num3 = "skill3",
-                Num4 = "skill4"
-            };
-
-            AttributeHero atr = new AttributeHero
-            {
-                Short = Short.AGI
-            };
-
-            Hero hero = new Hero
-            {
-                Attack = Attack.melee,
-                Affiliation = Affiliation.scorge,
-                Title = "titole",
-                Short = atr,
-                Status = "status",
-                Movespeed = 123,
-                Armor = "armour",
-                DPS = 123,
-                ID = "MIhail"
-
-            };
-            dota.Heroes.Add(hero);
-            Effect eff = new Effect
-            {
-                Main = "killer",
-                Secondary = "spread"
-            };
-
-            List<Effect> effects = new List<Effect>();
-            effects.Add(eff);
-            effects.Add(eff);
-
-            Item item = new Item
-            {
-                HeroName = "Mihail",
-                Merchant = "Kopchev",
-                Price = 123,
-                Need = "tes",
-                Description = "da",
-                Effects = effects,
-            };
-
-            dota.Items.Add(item);
-            dota.Items.Add(item);
-
-            return dota;
-
-        }
 
         //serialializeItem();
 
