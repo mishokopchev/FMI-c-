@@ -1,2 +1,6 @@
-﻿<p>sperma
-</p>
+﻿<ul>
+    @foreach(var Pair in ViewBag.list)
+    {
+    <li><p>@Pair.First</p> <span>is  @Pair.Second </span> </li> 
+    }
+</ul>

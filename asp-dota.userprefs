@@ -1,50 +1,27 @@
 ﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Data/DotaContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Program.cs">
     <Files>
-      <File FileName="asp-dota/Models/DotaEntity.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Models/EffectEntity.cs" Line="12" Column="13" />
-      <File FileName="asp-dota/Exceptions/CannotDeserializeException.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Adapter/Adapter.cs" Line="6" Column="25" />
-      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="84" Column="24" />
-      <File FileName="asp-dota/Adapter/GameToGameDTOAdapter.cs" Line="16" Column="2" />
-      <File FileName="asp-dota/Commons/Affiliation.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Commons/Attack.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Commons/EmptyEnumeration.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Models/GameEntity.cs" Line="12" Column="9" />
-      <File FileName="asp-dota/Models/HeroEntity.cs" Line="12" Column="6" />
-      <File FileName="asp-dota/Models/ItemEntity.cs" Line="26" Column="1" />
-      <File FileName="asp-dota/Models/SkillEntity.cs" Line="12" Column="21" />
-      <File FileName="asp-dota/Properties/launchSettings.json" Line="24" Column="22" />
-      <File FileName="asp-dota/Repository/DotaRepository.cs" Line="88" Column="46" />
-      <File FileName="asp-dota/Program.cs" Line="43" Column="48" />
-      <File FileName="asp-dota/Models/SkillTypeEntity.cs" Line="9" Column="14" />
-      <File FileName="asp-dota/Models/BuildingEntity.cs" Line="11" Column="18" />
-      <File FileName="asp-dota/Data/DotaContext.cs" Line="32" Column="62" />
-      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="13" Column="10" />
+      <File FileName="asp-dota/Program.cs" Line="73" Column="17" />
+      <File FileName="asp-dota/Controllers/HomeController.cs" Line="64" Column="14" />
+      <File FileName="asp-dota/Startup.cs" Line="40" Column="10" />
+      <File FileName="asp-dota/Serializer/Reader.cs" Line="136" Column="18" />
+      <File FileName="asp-dota/Serializer/IReader.cs" Line="20" Column="9" />
+      <File FileName="asp-dota/XML/valid_xml_11.xml" Line="6" Column="5" />
+      <File FileName="asp-dota/Views/Home/Misho.cshtml" Line="2" Column="37" />
+      <File FileName="asp-dota/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="asp-dota/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="asp-dota/Views/Home/test.cshtml" Line="1" Column="1" />
+      <File FileName="asp-dota/Views/Home/Index.cshtml" Line="2" Column="5" />
+      <File FileName="asp-dota/Views/Home/Contact.cshtml" Line="1" Column="1" />
+      <File FileName="asp-dota/Models/ErrorViewModel.cs" Line="10" Column="2" />
+      <File FileName="asp-dota/Commons/Pair.cs" Line="13" Column="10" />
+      <File FileName="asp-dota/bundleconfig.json" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="asp-dota" expanded="True">
-            <Node name="asp-dota" expanded="True">
-              <Node name="Adapter" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="DotaContext.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Repository" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.asp-dota PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Program.cs" relfile="asp-dota/Program.cs" line="88" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../students/students/Data/DbInitializer.cs" line="15" offsetX="329" offsetY="210" expression="e.StackTrace" liveUpdate="False" />

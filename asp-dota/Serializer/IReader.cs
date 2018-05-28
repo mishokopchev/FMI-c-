@@ -15,6 +15,7 @@ namespace aspdota.Serializer
 
         void ValidateContent(String input);
 
+        bool ValidateInput(String file);
 
 
 

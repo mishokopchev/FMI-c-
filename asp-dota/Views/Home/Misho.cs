@@ -25,7 +25,9 @@ public partial class Misho : MishoBase
 
 public override void Execute()
 {
-WriteLiteral("<p>sperma\n</p>");
+            WriteLiteral("<p>sperma\n</p>");
+            WriteLiteral("<p>lapanak</p>");
+
 
 }
 }

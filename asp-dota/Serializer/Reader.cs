@@ -22,6 +22,9 @@ namespace aspdota.Serializer
 
         public Reader (){
             this._xmlSerializer = new XmlSerializer(typeof(T));
+            InitSettings(ValidationType.DTD, DtdProcessing.Parse);
+            UseEventHandler();
+
         }
         public Reader(ILogger logger){
             _logger = logger;
@@ -42,7 +45,6 @@ namespace aspdota.Serializer
                     reader.Close();
                 }
             }
-
 
         }
         public T Deserialize(TextReader reader)
@@ -90,17 +92,37 @@ namespace aspdota.Serializer
             this._xmlSerializer.Serialize(writer,obj);
 
         }
+
+        public bool ValidateInput(String file){
+            InitSettings(ValidationType.DTD, DtdProcessing.Parse);
+            InitResolver(file);
+            UseEventHandler();
+
+            currentFile = file;
+            try{
+                XmlReader reader = XmlReader.Create(file, _settings);
+                while (reader.Read())
+                {
+                    // if exception occur ValidationCallback is called to interrupt the process
+                }
+                return true;
+            }
+            catch(Exception e){
+                return false;
+            }
+
+
+        }
+
         public void ValidateContent(string filesystem)
         {
             string fs = filesystem ?? FILESYSTEM;
             InitSettings(ValidationType.DTD,DtdProcessing.Parse);
             InitResolver(fs);
-            UseEventHandler();
 
             try
             {
                 string[] files = GetFiles(fs);
-
                 foreach(string file in files){
                     if(IsCorrectFile(file)){
                         currentFile = file;
@@ -109,7 +131,6 @@ namespace aspdota.Serializer
                             // if exception occur ValidationCallback is called to interrupt the process
                         }
                         Console.WriteLine("------> file : " + currentFile + " is valid");
-
                     }
 
                 }
@@ -126,7 +147,12 @@ namespace aspdota.Serializer
         private void ValidationCallBack(object sender, ValidationEventArgs e)
         {
             if (e.Severity == XmlSeverityType.Error)
-                Console.WriteLine("Problem with file: " + currentFile + ", cause + " + e.Message);
+            {
+				Console.WriteLine("Problem with file: " + currentFile + ", cause + " + e.Message);
+                throw new Exception("File not valid");
+                
+            }
+                
         }
 
         private string[] GetFiles(string fs)

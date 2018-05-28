@@ -19,12 +19,17 @@ namespace asp_dota
     {
         public static void Main(string[] args)
         {
-            //Reader reader = new Reader();
-            //reader.CheckXMlwithDTD();
-            //reader.Serialize();
+    //        try{
+                
+				//IReader<Dota> reader = new Reader<Dota>();
+				//string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_11.xml";
+				//bool val = reader.ValidateInput(fs);
+            //    Console.WriteLine(val);
+            //}
+            //catch(Exception e){
+            //    Console.WriteLine(e);
+            //}
 
-
-            //Serialization();
 
             var host = BuildWebHost(args);
             using (var scope = host.Services.CreateScope())
@@ -35,8 +40,6 @@ namespace asp_dota
                     var context = services.GetRequiredService<DotaContext>();
                     var dbInitiliazer = new DbInitializer(context);
                     dbInitiliazer.Initialize();
-                    _adapt(context);
-
                     //TODO check the logger that is created here in the application settings
                     var logger = services.GetRequiredService<ILogger<Program>>();
 
@@ -48,27 +51,14 @@ namespace asp_dota
                 }
             }
 
-            //host.Run();
-            //checkXml();
-
-            //Reader<Dota> reader = new Reader<Dota>();
-
-            //  Dota dota = dota1();
-            //reader.Serialize(dota,"/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
-            //Dota deDota = reader.Deserialize("/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_7.xml");
-            //Console.WriteLine(deDota);
-
-            // tova se serializira pravilno no trqbva da se sazdata pravilno obektite i vrazkite my tqh 
-            // za da mine test parvo trqbva da da ima tag za dotata
-
-            //_adapt();
+            host.Run();
 
 
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                   .UseStartup<Startup>().ConfigureLogging((logging) => logging.AddDebug().AddConsole().AddConsole())
+                   .UseStartup<Startup>()
                 .Build();
         
 
