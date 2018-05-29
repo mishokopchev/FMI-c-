@@ -19,7 +19,9 @@ namespace aspdota.Data
             
             try
             {
-                this.DbContext.Database.EnsureCreated();
+                this.DbContext.Database.EnsureCreated()
+                    ;
+
             }
             catch (Exception e)
             {

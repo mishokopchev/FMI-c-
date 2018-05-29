@@ -1,7 +1,7 @@
 ﻿using System;
 namespace aspdota.Adapter
 {
-    public interface Adapter<T,L>
+    public interface IAdapter<T,L>
     {
         T Adapt(L obj); 
     }

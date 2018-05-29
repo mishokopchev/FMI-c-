@@ -1,27 +1,51 @@
 ﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/XML/valid_xml_11.xml">
     <Files>
-      <File FileName="asp-dota/Program.cs" Line="73" Column="17" />
-      <File FileName="asp-dota/Controllers/HomeController.cs" Line="64" Column="14" />
-      <File FileName="asp-dota/Startup.cs" Line="40" Column="10" />
-      <File FileName="asp-dota/Serializer/Reader.cs" Line="136" Column="18" />
-      <File FileName="asp-dota/Serializer/IReader.cs" Line="20" Column="9" />
-      <File FileName="asp-dota/XML/valid_xml_11.xml" Line="6" Column="5" />
-      <File FileName="asp-dota/Views/Home/Misho.cshtml" Line="2" Column="37" />
-      <File FileName="asp-dota/Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Views/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Views/Home/test.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Views/Home/Index.cshtml" Line="2" Column="5" />
+      <File FileName="asp-dota/Views/Home/Index.cshtml" Line="13" Column="1" />
+      <File FileName="asp-dota/Controllers/HomeController.cs" Line="70" Column="1" />
+      <File FileName="asp-dota/Views/Home/ValidateContent.cshtml" Line="10" Column="1" />
+      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="12" Column="23" />
+      <File FileName="asp-dota/Startup.cs" Line="30" Column="70" />
+      <File FileName="asp-dota/Views/Shared/_Layout.cshtml" Line="4" Column="29" />
       <File FileName="asp-dota/Views/Home/Contact.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Models/ErrorViewModel.cs" Line="10" Column="2" />
-      <File FileName="asp-dota/Commons/Pair.cs" Line="13" Column="10" />
-      <File FileName="asp-dota/bundleconfig.json" Line="1" Column="1" />
+      <File FileName="asp-dota/Views/Home/ImportContent.cshtml" Line="10" Column="1" />
+      <File FileName="asp-dota/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="asp-dota/Models/HeroEntity.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/XmlDto/Hero.cs" Line="42" Column="1" />
+      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/Serializer/IReader.cs" Line="17" Column="9" />
+      <File FileName="asp-dota/Program.cs" Line="54" Column="1" />
+      <File FileName="asp-dota/XML/valid_xml_10.xml" Line="1" Column="1" />
+      <File FileName="asp-dota/XML/valid_xml_11.xml" Line="30" Column="17" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="asp-dota" expanded="True">
+            <Node name="asp-dota" expanded="True">
+              <Node name="Adapter" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Serializer" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="XML" expanded="True">
+                <Node name="valid_xml_11.xml" selected="True" />
+              </Node>
+              <Node name="XmlDto" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.asp-dota PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mihailkopchev/Projects/asp-dota/asp-dota/Controllers/HomeController.cs" relfile="asp-dota/Controllers/HomeController.cs" line="70" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../students/students/Data/DbInitializer.cs" line="15" offsetX="329" offsetY="210" expression="e.StackTrace" liveUpdate="False" />

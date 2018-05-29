@@ -19,18 +19,7 @@ namespace asp_dota
     {
         public static void Main(string[] args)
         {
-    //        try{
-                
-				//IReader<Dota> reader = new Reader<Dota>();
-				//string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_11.xml";
-				//bool val = reader.ValidateInput(fs);
-            //    Console.WriteLine(val);
-            //}
-            //catch(Exception e){
-            //    Console.WriteLine(e);
-            //}
-
-
+    
             var host = BuildWebHost(args);
             using (var scope = host.Services.CreateScope())
             {
@@ -65,7 +54,7 @@ namespace asp_dota
         public static void _adapt(DotaContext context){
             try{
                 
-            
+ 
             string filesystem = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML/valid_xml_11.xml";
             IReader<Dota> reader = new Reader<Dota>();
             Dota dota = reader.Deserialize(filesystem);
@@ -83,75 +72,6 @@ namespace asp_dota
             }
 
         }
-
-
-
-
-
-
-
-        //serialializeItem();
-
-        /*
-    }
-    public static void DesirealizeDota(){
-        try{
-            XmlSerializer xml = new XmlSerializer(typeof(Dota));
-            StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/generated.xml");
-            Dota dota = (aspdota.Models.Dota)xml.Deserialize(reader);
-
-        }catch(Exception e){
-            Console.Write(e);
-        }
-    }
-    public static void DesilializeHero(){
-        try{
-            XmlSerializer heroSerializer = new XmlSerializer(typeof(Hero));
-            StreamReader reader = new StreamReader("/Users/mihailkopchev/asp/xml_types/test1.xml");
-            Hero hero = (aspdota.Models.Hero)heroSerializer.Deserialize(reader);
-            Console.WriteLine(hero.ToString());
-
-         }
-        catch(Exception e ){
-            Console.WriteLine(e);
-        }
-
-    }
-    public static void serialializeItem(){
-        try{
-
-
-        DbInitializer db = new DbInitializer();
-        XmlSerializer itemS = new XmlSerializer(typeof(Item));
-        TextWriter FileStream = new StreamWriter("/Users/mihailkopchev/asp/xml_types/test.xml");
-
-        List<Effect> effects = new List<Effect>();
-        Skill skill = new Skill
-        {
-            Num1 = "ewq",
-            Num2 = "dqwdqw",
-            Num3 = "dqwdqw",
-            Num4 = "dwqdqq"
-        };
-
-        Hero hero = db.CreateHero(skill);
-        Item item = db.CreateItem(effects, hero);
-        Console.WriteLine(hero.ToString());
-
-        itemS.Serialize(FileStream,item);
-        }
-        catch(Exception e){
-            Console.WriteLine(e);
-        }
-    }
-
-
-
-
-
-
-
-*/
 
     }
 

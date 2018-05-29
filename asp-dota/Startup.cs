@@ -26,10 +26,11 @@ namespace asp_dota
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IGameRepository, GameRepository>();
-            services.AddSingleton<IDotaRepository, DotaRepository>();
+            
+            services.AddTransient<IDotaRepository, DotaRepository>();
             services.AddTransient<IReader<aspdota.XmlDto.Dota>, Reader<aspdota.XmlDto.Dota>>();
-            services.AddSingleton<Adapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter> ();
+            services.AddSingleton<IAdapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter> ();
+
             // mvc config
             services.AddDbContext<DotaContext>();
             services.AddMvc();

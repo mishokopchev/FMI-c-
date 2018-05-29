@@ -3,7 +3,7 @@ using aspdota.Models;
 
 namespace aspdota.Adapter
 {
-    public class GameToGameDTOAdapter : Adapter<GameEntity,GameEntity>
+    public class GameToGameDTOAdapter : IAdapter<GameEntity,GameEntity>
     {
         
         public GameToGameDTOAdapter()

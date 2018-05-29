@@ -11,7 +11,7 @@ namespace aspdota.XmlDto
     public class Hero
     {
         [XmlAttribute(AttributeName = "id")]
-        public string ID { get; set; }
+        public string ID { get; set; } 
         [XmlAttributeAttribute(AttributeName = "attack")]
         public Attack Attack { get; set; } // range/melee
         [XmlAttributeAttribute(AttributeName = "affiliation")]

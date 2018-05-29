@@ -7,7 +7,7 @@ using aspdota.XmlDto;
 
 namespace aspdota.Adapter
 {
-    public class DotaDtoToDotaEntityAdapter : Adapter<DotaEntity, Dota>
+    public class DotaDtoToDotaEntityAdapter : IAdapter<DotaEntity, Dota>
     {
         public DotaEntity Adapt(Dota obj)
         {
