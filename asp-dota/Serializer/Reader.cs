@@ -108,6 +108,7 @@ namespace aspdota.Serializer
                 return true;
             }
             catch(Exception e){
+                Console.WriteLine(e);
                 return false;
             }
 

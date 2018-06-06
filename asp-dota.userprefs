@@ -1,46 +1,27 @@
 ﻿<Properties StartupConfiguration="{F793A26F-AAF4-48A0-8D4F-6E1E2F3DE819}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/XML/valid_xml_11.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="asp-dota/Data/DotaContext.cs">
     <Files>
-      <File FileName="asp-dota/Views/Home/Index.cshtml" Line="13" Column="1" />
-      <File FileName="asp-dota/Controllers/HomeController.cs" Line="70" Column="1" />
-      <File FileName="asp-dota/Views/Home/ValidateContent.cshtml" Line="10" Column="1" />
-      <File FileName="asp-dota/Data/DbInitalizer.cs" Line="12" Column="23" />
-      <File FileName="asp-dota/Startup.cs" Line="30" Column="70" />
-      <File FileName="asp-dota/Views/Shared/_Layout.cshtml" Line="4" Column="29" />
-      <File FileName="asp-dota/Views/Home/Contact.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Views/Home/ImportContent.cshtml" Line="10" Column="1" />
-      <File FileName="asp-dota/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="asp-dota/Models/HeroEntity.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/XmlDto/Hero.cs" Line="42" Column="1" />
-      <File FileName="asp-dota/Adapter/DotaDtoToDotaEntityAdapter.cs" Line="1" Column="1" />
-      <File FileName="asp-dota/Serializer/IReader.cs" Line="17" Column="9" />
-      <File FileName="asp-dota/Program.cs" Line="54" Column="1" />
-      <File FileName="asp-dota/XML/valid_xml_10.xml" Line="1" Column="1" />
-      <File FileName="asp-dota/XML/valid_xml_11.xml" Line="30" Column="17" />
+      <File FileName="asp-dota/Controllers/HomeController.cs" Line="14" Column="27" />
+      <File FileName="asp-dota/Program.cs" Line="43" Column="24" />
+      <File FileName="asp-dota/bundleconfig.json" Line="18" Column="23" />
+      <File FileName="asp-dota/bower.json" Line="1" Column="1" />
+      <File FileName="asp-dota/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="asp-dota/appsettings.json" Line="1" Column="1" />
+      <File FileName="asp-dota/.bowerrc" Line="4" Column="5" />
+      <File FileName="asp-dota/XmlDto/Building.cs" Line="12" Column="38" />
+      <File FileName="asp-dota/XML/valid_xml_10.xml" Line="11" Column="14" />
+      <File FileName="asp-dota/XmlDto/Dota.cs" Line="12" Column="51" />
+      <File FileName="asp-dota/XmlDto/Hero.cs" Line="28" Column="34" />
+      <File FileName="asp-dota/XmlDto/Skill.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/XmlDto/Item.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/XmlDto/Game.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/XmlDto/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/XmlDto/Effect.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/Startup.cs" Line="1" Column="1" />
+      <File FileName="asp-dota/Data/DotaContext.cs" Line="28" Column="39" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="asp-dota" expanded="True">
-            <Node name="asp-dota" expanded="True">
-              <Node name="Adapter" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Serializer" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
-              <Node name="XML" expanded="True">
-                <Node name="valid_xml_11.xml" selected="True" />
-              </Node>
-              <Node name="XmlDto" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.ItemProperties.asp-dota PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

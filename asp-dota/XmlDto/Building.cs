@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace aspdota.XmlDto
 {
-    [XmlRoot("building")]
+    [XmlRoot( ElementName = "building")]
     [XmlType("building")]
     public class Building
     {   
