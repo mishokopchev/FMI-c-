@@ -1,12 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div class="row" style="background-color:'yellow'">
-   <div class="col-md-6">
-            <input type="button" value="Validate" onclick="window.location.href='@Url.Action("ValidateContent", "HomeController")'" />
-            <a asp-area="" asp-controller="Home" asp-action="ValidateContent">ValidateContent</a>
-       <form method="get" action='@Url.Action("ValidateContent", "HomeController")' >
-            <input type="submit" value="Click me to go to /Home/About" />
-        </form>
-    </div>  
-</div>
+
+<br>
+<br>
+<br>
+<br>
+    <div class="containter">
+        <div class="row" style="background-color:'yellow'" >
+             <div class="col-md-6">
+                <button class="btn btn-info" type="button" onclick="location.href='@Url.Action("ValidateContent","Home")'" >Validate Files</button>
+             </div> 
+             <div class = "col-md-6">
+                <button class="btn btn-info" type="button" onclick="location.href='@Url.Action("ImportContent","Home")'" >Import Files</button>
+            </div>
+        </div>
+    </div> 
