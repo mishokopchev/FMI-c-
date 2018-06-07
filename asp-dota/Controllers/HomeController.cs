@@ -82,15 +82,13 @@ namespace asp_dota.Controllers
             string pattern = ".xml";
             string[] files = Directory.GetFiles(fs);
 
-            var xmls = new List<Pair<string, string>>();
+            var xmls = new List<Pair<string, bool>>();
             foreach (string file in files)
             {
                 if(file.EndsWith(pattern)){
                     
                     bool valid = _reader.ValidateInput(file);
-                    string message;
-                    message = valid == true ? "valid" : message = "not valid";
-                    var pair = new Pair<string, string>(file, message);
+                    var pair = new Pair<string, bool>(file, valid);
                     xmls.Add(pair);
                 }
             }

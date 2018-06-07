@@ -1,9 +1,19 @@
 ﻿@if(ViewBag.list != null && ViewBag.list.Count > 0 ){
     <ul>
-    @foreach(var Pair in ViewBag.list)
-    {
-    <li><p>@Pair.First is <span class="label label-success">   @Pair.Second </span> </p> </li> 
-    }
+     @foreach(var Pair in ViewBag.list)
+     {
+       <li>@Pair.First
+        
+       @if(Pair.Second != null)
+        {
+            <span class="label label-success" >is  @Pair.Second </span>
+        }
+        else
+        {
+           <span class="label label-danger" >is not @Pair.Second </span>
+        }
+       </li> 
+     }
 </ul>
 }
 

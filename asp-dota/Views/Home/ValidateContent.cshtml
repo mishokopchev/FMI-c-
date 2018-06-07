@@ -4,13 +4,13 @@
      {
        <li>@Pair.First
         
-       @if(Pair.Second != null)
+       @if(Pair.Second)
         {
-            <span class="label label-success" >is  @Pair.Second </span>
+            <span class="label label-success" >is valid </span>
         }
         else
         {
-           <span class="label label-error" >is not @Pair.Second </span>
+           <span class="label label-danger" >is not valid </span>
         }
        </li> 
      }
