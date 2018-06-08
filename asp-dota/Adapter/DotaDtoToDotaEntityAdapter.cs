@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
+using System.Reflection;
 using aspdota.Models;
 using aspdota.XmlDto;
 
@@ -92,9 +91,13 @@ namespace aspdota.Adapter
             SkillEntity entity = new SkillEntity();
             entity.SkillTypes = new List<SkillTypeEntity>();
             Type type = skill.GetType();
-            foreach(var f in type.GetFields().Where(f => f.IsPublic)){
-                SkillTypeEntity skillType = new SkillTypeEntity();
-                skillType.SkillName = (string)f.GetValue(skill);
+
+            foreach (PropertyInfo prop in type.GetProperties())
+            {
+                SkillTypeEntity skillType = new SkillTypeEntity
+                {
+                    SkillName = (string)prop.GetValue(skill)
+                };
                 entity.AddSkill(skillType);
             }
             return entity;

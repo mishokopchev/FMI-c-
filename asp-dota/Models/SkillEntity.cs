@@ -17,6 +17,7 @@ namespace aspdota.Models
             _ensureCreated();
             this.SkillTypes.Add(skillTypenEntity);
         }
+
         private void _ensureCreated(){
             if(SkillTypes == null){
                 SkillTypes = new List<SkillTypeEntity>();

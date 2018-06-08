@@ -28,7 +28,7 @@ namespace asp_dota
         {
             
             services.AddTransient<IDotaRepository, DotaRepository>();
-            services.AddTransient<IReader<aspdota.XmlDto.Dota>, Reader<aspdota.XmlDto.Dota>>();
+            services.AddTransient<ISerealizer<aspdota.XmlDto.Dota>, Serealizer<aspdota.XmlDto.Dota>>();
             services.AddSingleton<IAdapter<aspdota.Models.DotaEntity,aspdota.XmlDto.Dota>,DotaDtoToDotaEntityAdapter> ();
 
             // mvc config

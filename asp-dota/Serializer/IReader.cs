@@ -9,11 +9,6 @@ namespace aspdota.Serializer
 
         T Deserialize(TextReader reader);
 
-        void Serialize(T obj, string where);    
-
-        void Serialize(T obl, TextWriter writer);
-
-        bool ValidateInput(String file);
-
+        bool Validate(String file);
     }
 }

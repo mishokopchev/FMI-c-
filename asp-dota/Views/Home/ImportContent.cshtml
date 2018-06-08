@@ -4,13 +4,13 @@
      {
        <li>@Pair.First
         
-       @if(Pair.Second != null)
+       @if(Pair.Second)
         {
-            <span class="label label-success" >is  @Pair.Second </span>
+            <span class="label label-success" >is  imported </span>
         }
         else
         {
-           <span class="label label-danger" >is not @Pair.Second </span>
+           <span class="label label-danger" >is not imported </span>
         }
        </li> 
      }

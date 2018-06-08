@@ -1,32 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using aspdota.Exceptions;
-using aspdota.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace aspdota.Serializer
 {
-    public class Reader<T> : IReader<T>
+    public class Serealizer<T> : ISerealizer<T>
     {
-        private static string FILESYSTEM = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
+        private static string FILESYSTEM = "./XML";
         private static string EXTENSION = ".xml";
         private string currentFile = "";
         private XmlReaderSettings _settings;
         private XmlSerializer _xmlSerializer; 
         private ILogger _logger;
 
-        public Reader (){
+        public Serealizer (){
             this._xmlSerializer = new XmlSerializer(typeof(T));
             InitSettings(ValidationType.DTD, DtdProcessing.Parse);
             UseEventHandler();
 
         }
-        public Reader(ILogger logger){
+        public Serealizer(ILogger logger){
             _logger = logger;
         }
 
@@ -93,7 +90,7 @@ namespace aspdota.Serializer
 
         }
 
-        public bool ValidateInput(String file){
+        public bool Validate(String file){
             InitSettings(ValidationType.DTD, DtdProcessing.Parse);
             InitResolver(file);
             UseEventHandler();

@@ -10,19 +10,24 @@ using aspdota.Commons;
 using aspdota.Repository;
 using aspdota.Adapter;
 using aspdota.Models;
+using System.Configuration;
 
 namespace asp_dota.Controllers
 {
     public class HomeController : Controller
     {
-        private IReader<Dota> _reader;
+        private ISerealizer<Dota> _serializer;
         private IAdapter<DotaEntity,Dota> _adapter;
         private IDotaRepository _dotaRepository;
 
+        //TODO get the configuration Manager for reading files, prekaleno mnogo za edno property
+        [ConfigurationProperty("FileSystem", IsRequired = true)]
+        private string _fs { get; set; }
 
-        public HomeController(IReader<Dota> Reader,IAdapter<DotaEntity,Dota> Adapter,IDotaRepository DotaRepository)
+
+        public HomeController(ISerealizer<Dota> ser,IAdapter<DotaEntity,Dota> Adapter,IDotaRepository DotaRepository)
         {
-            this._reader = Reader;
+            this._serializer = ser;
             this._adapter = Adapter;
             this._dotaRepository = DotaRepository;
         }
@@ -46,58 +51,67 @@ namespace asp_dota.Controllers
             return View();
         }
         public IActionResult ImportContent(){
+            var pairs = new List<Pair<string, bool>>();
+            string fs = "./XML";
+            string pattern = ".xml";
+            string currentFile = "";
 
-            var pairs = new List<Pair<string, string>>();
-            string objfile = "";
-            try
-            {
-                string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
-                string pattern = ".xml";
-                string[] files = Directory.GetFiles(fs);
+            string[] files = Directory.GetFiles(fs);
+
                 foreach(string file in files){
-                    if(file.EndsWith(pattern)){
-						objfile = file;
-						Dota dota1 = _reader.Deserialize(file);
-						DotaEntity entity = _adapter.Adapt(dota1);
-						_dotaRepository.Persist(entity);
-						var pair = new Pair<string, string>(file, "Imported");
-						pairs.Add(pair);
+                   if(file.EndsWith(pattern)){
+                    try
+                    {
+                        currentFile = file;
+                        Dota dota1 = _serializer.Deserialize(file);
+                        DotaEntity entity = _adapter.Adapt(dota1);
+                        _dotaRepository.Persist(entity);
+                        var pair = new Pair<string, bool>(file, true);
+                        pairs.Add(pair);
+                    }
+                    catch (Exception e)
+                    {
+                        var pair = new Pair<string, bool>(currentFile, false);
+                        pairs.Add(pair);
+                        continue;
+                    }
+						
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                var pair = new Pair<string, string>(objfile, "Not Imported");
-                pairs.Add(pair);
-                Console.WriteLine(e);
 
-            }
             ViewBag.list = pairs;
             return View();
         }
 
         public IActionResult ValidateContent()
         {
-            string fs = "/Users/mihailkopchev/Projects/asp-dota/asp-dota/XML";
+            string fs = "./XML";
             string pattern = ".xml";
             string[] files = Directory.GetFiles(fs);
-
             var xmls = new List<Pair<string, bool>>();
             foreach (string file in files)
             {
-                if(file.EndsWith(pattern)){
-                    
-                    bool valid = _reader.ValidateInput(file);
-                    var pair = new Pair<string, bool>(file, valid);
-                    xmls.Add(pair);
+                if (file.EndsWith(pattern, StringComparison.Ordinal))
+                {
+                    bool valid = false;
+                    try
+                    {
+                        valid = _serializer.Validate(file);
+                        var pair = new Pair<string, bool>(file, valid);
+                        xmls.Add(pair);
+                    }
+                    catch (Exception e)
+                    {
+                        var pair = new Pair<string, bool>(file, valid);
+                        xmls.Add(pair);
+                        continue;
+                    }
                 }
+
             }
+
             ViewBag.list = xmls;
             return View();
-        }
-
-        public void InsertFiles(){
-            
         }
 
         public IActionResult Error()

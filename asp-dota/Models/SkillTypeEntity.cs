@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace aspdota.Models
 {
@@ -7,7 +8,9 @@ namespace aspdota.Models
 
     {   
         [Key]
-        public String SkillName { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int SkillId { get; set; }
+        public string SkillName { get; set; }
         public String SkillDescription { get; set; }
 
         public SkillTypeEntity()
